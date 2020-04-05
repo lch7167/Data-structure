@@ -4,52 +4,52 @@ class MyDoubleVector {
 
 public:
 	MyDoubleVector(size_t init_cpacity=100);
-	//postcondition : ±âº»»ı¼ºÀÚ
+	//postcondition : ê¸°ë³¸ìƒì„±ì
 	MyDoubleVector(const MyDoubleVector& v);
 	//postcondition : copy constructor for deep copy
 	MyDoubleVector operator=(MyDoubleVector& v);
 	//postcondition : assignment operator for deep copy
 	void operator+=(MyDoubleVector& v);
-	//postcondition : RHS ¿ÀºêÁ§Æ®¸¦ LHS ¿ÀºêÁ§Æ®¿¡ Ãß°¡
+	//postcondition : RHS ì˜¤ë¸Œì íŠ¸ë¥¼ LHS ì˜¤ë¸Œì íŠ¸ì— ì¶”ê°€
 	double& operator[](const int& n);
-	//postcondition : ÇØ´ç¹üÀ§ÀÇ element ¸®ÅÏ, ¹üÀ§¸¦ ¹ş¾î³ª¸é assert functionÀ» ÀÌ¿ëÇÏ¿© Á¾·á
+	//postcondition : í•´ë‹¹ë²”ìœ„ì˜ element ë¦¬í„´, ë²”ìœ„ë¥¼ ë²—ì–´ë‚˜ë©´ assert functionì„ ì´ìš©í•˜ì—¬ ì¢…ë£Œ
 	MyDoubleVector operator+(const MyDoubleVector& v);
-	//precondition : two operandsÀÇ size°¡ °°¾Æ¾ßÇÔ
-	//postcondition : µÎ °´Ã¼µéÀÇ º¤ÅÍÀÇ ÇÕÀ» ¸®ÅÏ
+	//precondition : two operandsì˜ sizeê°€ ê°™ì•„ì•¼í•¨
+	//postcondition : ë‘ ê°ì²´ë“¤ì˜ ë²¡í„°ì˜ í•©ì„ ë¦¬í„´
 	MyDoubleVector operator-(const MyDoubleVector& v);
-	//precondition : two operandsÀÇ size°¡ °°¾Æ¾ßÇÔ
-	//postcondition : µÎ °´Ã¼µéÀÇ º¤ÅÍÀÇ Â÷¸¦ ¸®ÅÏ 
+	//precondition : two operandsì˜ sizeê°€ ê°™ì•„ì•¼í•¨
+	//postcondition : ë‘ ê°ì²´ë“¤ì˜ ë²¡í„°ì˜ ì°¨ë¥¼ ë¦¬í„´ 
 	double operator*(const MyDoubleVector& v);
-	//precondition : two operandsÀÇ size°¡ °°¾Æ¾ßÇÔ
-	//postcondition : ³»ÀûÀ» ±¸ÇÔ
+	//precondition : two operandsì˜ sizeê°€ ê°™ì•„ì•¼í•¨
+	//postcondition : ë‚´ì ì„ êµ¬í•¨
 	void operator-();
-	//postcondition : ºÎÈ£¸¦ ¹Ù²ã¼­ ¸®ÅÏ
+	//postcondition : ë¶€í˜¸ë¥¼ ë°”ê¿”ì„œ ë¦¬í„´
 	bool operator==(MyDoubleVector& v);
-	//precondition : two operandsÀÇ size°¡ °°¾Æ¾ßÇÔ capacity°¡ ¾Æ´Ï¶ó
-	//postcondition : µÎ º¤ÅÍ°¡ °°ÀºÁö °°Áö¾ÊÀºÁö ¸®ÅÏ
+	//precondition : two operandsì˜ sizeê°€ ê°™ì•„ì•¼í•¨ capacityê°€ ì•„ë‹ˆë¼
+	//postcondition : ë‘ ë²¡í„°ê°€ ê°™ì€ì§€ ê°™ì§€ì•Šì€ì§€ ë¦¬í„´
 	void operator()();
-	//postcondition : ½Ç¼öÇüÀ¸·Î º¯°æ
+	//postcondition : ì‹¤ìˆ˜í˜•ìœ¼ë¡œ ë³€ê²½
 	void pop_back();
-	//postcondition : last element¸¦ Áö¿ì°í vector sizeµµ ÇÏ³ª ÁÙÀÓ
+	//postcondition : last elementë¥¼ ì§€ìš°ê³  vector sizeë„ í•˜ë‚˜ ì¤„ì„
 	void push_back(double x);
-	//postcondition : vector ³¡¿¡ new element¸¦ Ãß°¡ÇÏ°í x·Î ÃÊ±âÈ­
+	//postcondition : vector ëì— new elementë¥¼ ì¶”ê°€í•˜ê³  xë¡œ ì´ˆê¸°í™”
 	size_t capacity() const;
-	//postcondition : capacity°ª ¹İÈ¯;
+	//postcondition : capacityê°’ ë°˜í™˜;
 	size_t size() const;
-	//postcondition : size°ª ¹İÈ¯
+	//postcondition : sizeê°’ ë°˜í™˜
 	void reserve(size_t n);
-	//precondition : nÀº ¾ç¼ö
-	//postcondition : ÀúÀå °ø°£ÀÇ ¿ë·®ÀÌ Àû¾îµµ n °³ÀÇ ¿ä¼Ò¸¦ º¸À¯ÇÏ±â¿¡ ÃæºĞÇÏµµ·Ï ¿äÃ»
+	//precondition : nì€ ì–‘ìˆ˜
+	//postcondition : ì €ì¥ ê³µê°„ì˜ ìš©ëŸ‰ì´ ì ì–´ë„ n ê°œì˜ ìš”ì†Œë¥¼ ë³´ìœ í•˜ê¸°ì— ì¶©ë¶„í•˜ë„ë¡ ìš”ì²­
 	bool empty() const;
-	//postcondition : º¤ÅÍ size°¡ 0ÀÎÁö ÆÇ´Ü
+	//postcondition : ë²¡í„° sizeê°€ 0ì¸ì§€ íŒë‹¨
 	void clear();
-	//postcondition : º¤ÅÍ ¸ğµç ¿ä¼Ò »èÁ¦
+	//postcondition : ë²¡í„° ëª¨ë“  ìš”ì†Œ ì‚­ì œ
 	~MyDoubleVector();
-	//postcondition : ¼Ò¸êÀÚ
+	//postcondition : ì†Œë©¸ì
 	void print();
-	// Å×½ºÆ®¿ë ÇÔ¼ö
+	// í…ŒìŠ¤íŠ¸ìš© í•¨ìˆ˜
 
 private:
 	double* data;
-	size_t used, cap = 0, Default_capacity = 100;
+	size_t used, cap = 0, Default_capacity = 1000;
 };
