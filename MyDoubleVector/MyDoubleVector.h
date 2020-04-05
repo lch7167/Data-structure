@@ -51,5 +51,5 @@ public:
 
 private:
 	double* data;
-	size_t used, cap = 0, Default_capacity = 1000;
+	size_t used, cap = 0, Default_capacity = 100;
 };
